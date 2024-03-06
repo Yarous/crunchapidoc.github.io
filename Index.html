@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css"
+			,rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+		<!-- Поддержка Python -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+		<title>CrunchAPI Документация</title>
+		<link href="styles/style.css" , rel="stylesheet" />
+		<link
+			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
+		<!-- Поддержка Python -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+	</head>
+	<body>
+		<div class="header">
+			<h1 id="apiHeader">CrunchAPI Документация</h1>
+			<div class="search-box">
+				<input
+					type="text"
+					id="searchInput"
+					placeholder="Поиск..."
+					onkeydown="handleSearch(event)"
+				/>
+				<button class="search-btn" onclick="searchText()">Найти</button>
+			</div>
+		</div>
+
+		<div class="container">
+			<h1>Документация CrunchAPI</h1>
+			<p>
+				Модуль CrunchAPI предназначен для взаимодействия с веб-сайтом
+				CodeCrunch.
+			</p>
+
+			<h2>Обзор</h2>
+			Кратко: CrunchAPI это библиотека разработанная создателями CodeCrunch для
+			удобного взаимодействия с тестами и информацией тестов. Написана без
+			использования не штатных библиотек.
+			<h2>Установка</h2>
+			<div class="method">
+				<h3>pip install CrunchAPI</h3>
+				<p>
+					Одна команда для установки огромного пакета возможностей CodeCrunch!
+				</p>
+			</div>
+			<h2>Использование</h2>
+			<div class="method">
+				<h3>fetch_data(url)</h3>
+				<p>
+					Метод для отправки HTTP GET-запросов. Метод используется для работы
+					двух других, прошу вас его не трогать!
+				</p>
+			</div>
+
+			<div class="method">
+				<h3>getTest(id)</h3>
+				<p>
+					Метод для получения информации о тесте по его идентификатору. Как
+					аргумент принимает ID теста, возвращает лист всех названий, id,
+					ответов на тест .
+				</p>
+				<pre><code class="language-python">from CrunchAPI import Test
+
+test = Test()
+print(test.getTest(11))</code></pre>
+			</div>
+
+			<div class="method">
+				<h3>getAllId()</h3>
+				<p>
+					Метод для получения списка всех идентификаторов тестов. Возвращает
+					массив чисел - всех идентификаторов тестов !
+				</p>
+				<code>api_instance.getAllId()</code>
+				<pre><code class="language-python">
+        from CrunchAPI import Test
+
+        test = Test()
+
+        print(test.getAllId())
+        </code></pre>
+			</div>
+		</div>
+
+		<script src="scripts/find.js"></script>
+	</body>
+</html>
