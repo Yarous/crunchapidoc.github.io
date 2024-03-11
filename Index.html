@@ -3,13 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link
-			href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/themes/prism.min.css"
-			,rel="stylesheet"
-		/>
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/prism.min.js"></script>
-		<!-- Поддержка Python -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.1/components/prism-python.min.js"></script>
+
 		<title>CrunchAPI Документация</title>
 		<link href="styles/style.css" , rel="stylesheet" />
 		<link
@@ -73,20 +67,38 @@
 test = Test()
 print(test.getTest(11))</code></pre>
 			</div>
-
 			<div class="method">
 				<h3>getAllId()</h3>
 				<p>
 					Метод для получения списка всех идентификаторов тестов. Возвращает
 					массив чисел - всех идентификаторов тестов !
 				</p>
-				<code>api_instance.getAllId()</code>
 				<pre><code class="language-python">
         from CrunchAPI import Test
 
         test = Test()
 
         print(test.getAllId())
+        </code></pre>
+			</div>
+			<div class="method">
+				<h3>addTest()</h3>
+				<p>
+					Метод для добавления теста на CodeCrunch. Принимает в виде аргумента
+					словарь состоящий из следующих ключей: testName, testDescription,
+					questions, options[], selectedOption
+				</p>
+				<pre><code class="language-python">
+from CrunchAPI import Test
+
+test = Test()
+
+info = {'testName': 'name of your test',
+         'testDescription': 'description of your test',
+           'question': 'qst',
+             'options': ['pick 1', 'pick 2', 'pick 3', 'pick 4', 'pick 5'],
+               'selectedOption': 3}
+print(test.addTest(info))
         </code></pre>
 			</div>
 		</div>
